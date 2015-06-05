@@ -3,7 +3,7 @@
     "capabilities": [
         ""
     ],
-    "companyName": "kuteken@gmail.com",
+    "companyName": "kuteken",
     "longName": "HelloPebbleWithC",
     "projectType": "native",
     "resources": {
@@ -11,9 +11,13 @@
     },
     "sdkVersion": "3",
     "shortName": "HelloPebbleWithC",
+    "targetPlatforms": [
+        "aplite",
+        "basalt"
+    ],
     "uuid": "08ae146c-0740-48f2-b056-19519c076ee2",
     "versionLabel": "1.0",
     "watchapp": {
-        "watchface": false
+        "watchface": true
     }
 }
