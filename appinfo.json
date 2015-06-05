@@ -1,0 +1,19 @@
+{
+    "appKeys": {},
+    "capabilities": [
+        ""
+    ],
+    "companyName": "kuteken@gmail.com",
+    "longName": "HelloPebbleWithC",
+    "projectType": "native",
+    "resources": {
+        "media": []
+    },
+    "sdkVersion": "3",
+    "shortName": "HelloPebbleWithC",
+    "uuid": "08ae146c-0740-48f2-b056-19519c076ee2",
+    "versionLabel": "1.0",
+    "watchapp": {
+        "watchface": false
+    }
+}
