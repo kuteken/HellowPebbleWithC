@@ -2,6 +2,7 @@
 
 static Window *s_main_window;
 static TextLayer *s_time_layer;
+static GFont s_time_font;
 
 static void update_time() {
   // Get a tm structure
@@ -31,8 +32,14 @@ static void main_window_load(Window *window) {
   text_layer_set_text_color(s_time_layer, GColorBlack);
   text_layer_set_text(s_time_layer, "0:00");
 
+  // Create GFont
+  s_time_font = fonts_load_custom_font(resource_get_handle(RESOURCE_ID_FONT_PERFECT_DOS_48));
+
+  // Apply to TextLayer
+  text_layer_set_font(s_time_layer, s_time_font);
+  
   // Improve the layout to be more like a watch interface
-  text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
+  // text_layer_set_font(s_time_layer, fonts_get_system_font(FONT_KEY_BITHAM_42_BOLD));
   text_layer_set_text_alignment(s_time_layer, GTextAlignmentCenter);
 
   // Add is as a child layer to the Window's root layer
@@ -43,8 +50,11 @@ static void main_window_load(Window *window) {
 }
 
 static void main_window_unload(Window *window) {
-    // Destroy TextLayer
-    text_layer_destroy(s_time_layer);
+  // Unload GFont
+  fonts_unload_custom_font(s_time_font);
+
+  // Destroy TextLayer
+  text_layer_destroy(s_time_layer);
 }
 
 static void tick_handler(struct tm *tick_time, TimeUnits units_changed) {
